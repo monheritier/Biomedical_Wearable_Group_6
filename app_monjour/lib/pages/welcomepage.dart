@@ -132,6 +132,28 @@ class _WelcomePageState extends State<WelcomePage> {
           ),
         ),
       ),
+floatingActionButtonLocation:FloatingActionButtonLocation.startFloat,
+    floatingActionButton: FloatingActionButton(
+      
+      backgroundColor: Colors.white,
+      onPressed: () {
+        Navigator.of(context).popAndPushNamed('/intro_screen');
+        /* Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => WelcomePage())); */
+      },
+      elevation: 2.0,
+      shape: CircleBorder(),
+      child: Icon(
+        Icons.arrow_back_ios_sharp,
+        color: Color.fromARGB(249, 0, 150, 136),
+      ),
+    ),
     );
   }
 }
+/* @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    
+  );
+} */

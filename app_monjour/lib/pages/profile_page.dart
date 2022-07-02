@@ -17,7 +17,7 @@ class ProfilePage extends StatelessWidget {
             icon: Icon(Icons.arrow_back_ios),
             color: Colors.black,
           ),
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color.fromARGB(249, 0, 150, 136),
           titleTextStyle:
         TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
         centerTitle: true,

@@ -18,7 +18,7 @@ class AuthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     print('${AuthPage.routename} built');
     return Scaffold(
-      backgroundColor: Color.fromARGB(240, 247, 246, 244),
+      backgroundColor: Color.fromARGB(249, 0, 150, 136),
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -29,13 +29,19 @@ class AuthPage extends StatelessWidget {
           icon: Icon(Icons.arrow_back_ios),
           color: Colors.white,
         ),
-        title: Text(AuthPage.routename),
-        backgroundColor: Colors.transparent,
-      ),
+        title: const Text('Authorization'),
+          titleTextStyle:
+        TextStyle(color: Colors.white, fontSize: 18, fontWeight:FontWeight.bold),
+        centerTitle: true,
+        backgroundColor: Color.fromARGB(249, 0, 150, 136)),
+        /* backgroundColor: Colors.transparent, */
+      
       body: Center(
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            
             ElevatedButton(
               onPressed: () async {
                 // Authorize the app
@@ -47,7 +53,10 @@ class AuthPage extends StatelessWidget {
                   callbackUrlScheme: 'monjour',
                 );
               },
-              child: Text('Please authorize the app to use your data!'),
+              style: ElevatedButton. styleFrom(primary: Colors.white,fixedSize: Size(280, 25)),
+              child:Text('Please authorize the app to use your data!',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Color.fromARGB(249, 0, 150, 136), fontSize: 13, fontWeight:FontWeight.bold),),
             ),
             SizedBox(
               height: 80,
@@ -56,7 +65,7 @@ class AuthPage extends StatelessWidget {
               width: double.infinity,
               height: 150,
               decoration: BoxDecoration(
-                  color: secondary.withOpacity(0.5),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(20)),
               child: Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -79,12 +88,12 @@ class AuthPage extends StatelessWidget {
                         height: 55,
                         decoration: BoxDecoration(
                             gradient:
-                                LinearGradient(colors: [secondary, primary]),
+                                LinearGradient(colors: [Color.fromARGB(249, 0, 150, 136).withAlpha(150), Color.fromARGB(249, 0, 150, 136).withAlpha(215)]),
                             borderRadius: BorderRadius.circular(20)),
                         child: Center(
                           child: Text(
                             "MonJour",
-                            style: TextStyle(fontSize: 13, color: white),
+                            style: TextStyle(fontSize: 13, color: Colors.white),
                           ),
                         ),
                       ),

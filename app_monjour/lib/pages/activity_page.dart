@@ -3,6 +3,7 @@ import 'package:app_monjour/pages/home.dart';
 import 'package:app_monjour/utils/formats.dart';
 import 'package:floor/floor.dart';
 import 'package:flutter/material.dart';
+import 'package:app_monjour/theme/colors.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:fitbitter/fitbitter.dart';
@@ -33,7 +34,7 @@ class ActivityP extends StatelessWidget {
           title: const Text('Activity Monitoring'),
           titleTextStyle:
         TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
-          backgroundColor: Color.fromARGB(255, 157, 206, 255).withOpacity(0.5),
+          backgroundColor: secondary.withAlpha(185),
           centerTitle: true,
           actions: [
             IconButton(

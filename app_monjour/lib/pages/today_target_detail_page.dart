@@ -39,6 +39,10 @@ class _UserWorkoutState extends State<UserWorkoutPage> {
             icon: Icon(Icons.arrow_back_ios),
             color: Colors.black,
           ), 
+           title: const Text('Workout Suggestions'),
+          titleTextStyle:
+        TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
+        centerTitle: true,
           backgroundColor:Colors.white,
       ),
       backgroundColor: Colors.white,
@@ -50,7 +54,7 @@ class _UserWorkoutState extends State<UserWorkoutPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Burn your calories',
+              'Burn your calories!',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             SizedBox(height: 24.0),

@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+          leading: IconButton(
             onPressed: () {
               Navigator.of(context).popAndPushNamed('/auth_page');
               /* Navigator.of(context).push(MaterialPageRoute(
@@ -85,13 +85,12 @@ class _HomePageState extends State<HomePage> {
                   decoration: BoxDecoration(
                       color: Color.fromARGB(180, 0, 150, 136),
                       borderRadius: BorderRadius.circular(20)),
-                  child: Center(child: InkWell(
-                    child:Icon(Icons.accessibility_rounded),
-                  onTap: () {
-                    
-                    Navigator.popAndPushNamed(context, '/profile_page');
-                    
-                  })),
+                  child: Center(
+                      child: InkWell(
+                          child: Icon(Icons.accessibility_rounded),
+                          onTap: () {
+                            Navigator.popAndPushNamed(context, '/profile_page');
+                          })),
                 )
               ],
             ),
@@ -110,7 +109,7 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               height: 100,
               decoration: BoxDecoration(
-                  color: secondary.withOpacity(0.5),
+                  color: secondary.withAlpha(170),
                   borderRadius: BorderRadius.circular(20)),
               child: Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -134,12 +133,12 @@ class _HomePageState extends State<HomePage> {
                         height: 35,
                         decoration: BoxDecoration(
                             gradient:
-                                LinearGradient(colors: [secondary, primary]),
+                                LinearGradient(colors: [secondary.withAlpha(100), secondary.withAlpha(255)]),
                             borderRadius: BorderRadius.circular(20)),
                         child: Center(
                           child: Text(
                             "Check it!",
-                            style: TextStyle(fontSize: 13, color: white),
+                            style: TextStyle(fontSize: 13, color: Colors.black),
                           ),
                         ),
                       ),
@@ -180,13 +179,15 @@ class _HomePageState extends State<HomePage> {
                         width: 70,
                         height: 35,
                         decoration: BoxDecoration(
-                            gradient:
-                                LinearGradient(colors: [secondary, primary]),
+                            gradient: LinearGradient(colors: [
+                              Color.fromARGB(255, 255, 104, 104).withAlpha(100),
+                              Colors.redAccent.withAlpha(255)
+                            ]),
                             borderRadius: BorderRadius.circular(20)),
                         child: Center(
                           child: Text(
                             "Check it!",
-                            style: TextStyle(fontSize: 13, color: white),
+                            style: TextStyle(fontSize: 13, color: Colors.black),
                           ),
                         ),
                       ),
@@ -235,13 +236,15 @@ class _HomePageState extends State<HomePage> {
                         width: 70,
                         height: 35,
                         decoration: BoxDecoration(
-                            gradient:
-                                LinearGradient(colors: [secondary, primary]),
+                            gradient: LinearGradient(colors: [
+                              Color.fromARGB(255, 255, 255, 81).withAlpha(100),
+                              Color.fromARGB(255, 255, 255, 0).withAlpha(255)
+                            ]),
                             borderRadius: BorderRadius.circular(20)),
                         child: Center(
                           child: Text(
                             "Open it!",
-                            style: TextStyle(fontSize: 13, color: white),
+                            style: TextStyle(fontSize: 13, color: Colors.black),
                           ),
                         ),
                       ),
@@ -274,7 +277,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).popAndPushNamed('/today_target_detail');
+                        Navigator.of(context)
+                            .popAndPushNamed('/today_target_detail');
                         /* Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => UserWorkoutPage())); */
                       },
@@ -282,13 +286,15 @@ class _HomePageState extends State<HomePage> {
                         width: 70,
                         height: 35,
                         decoration: BoxDecoration(
-                            gradient:
-                                LinearGradient(colors: [secondary, primary]),
+                            gradient: LinearGradient(colors: [
+                              Color.fromARGB(233, 79, 238, 98).withAlpha(100),
+                              Color.fromARGB(219, 3, 255, 16).withAlpha(255)
+                            ]),
                             borderRadius: BorderRadius.circular(20)),
                         child: Center(
                           child: Text(
                             "Open it!",
-                            style: TextStyle(fontSize: 13, color: white),
+                            style: TextStyle(fontSize: 13, color: black),
                           ),
                         ),
                       ),
