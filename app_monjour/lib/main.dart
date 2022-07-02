@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       create: (context) => HeartView(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: IntroductionScreen(),
         onGenerateRoute: router.generateRoute,
       ),
     );
