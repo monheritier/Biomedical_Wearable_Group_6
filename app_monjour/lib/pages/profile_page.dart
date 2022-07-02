@@ -20,12 +20,8 @@ class ProfilePage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           titleTextStyle:
         TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
-          title: Text(
-            "Your Profile Page",
-            style: TextStyle(fontSize: 18.0),
-              
-          ),
-        ),
+        centerTitle: true,
+          title: Text("Your Profile Page"),),
         backgroundColor: Color.fromARGB(249, 0, 150, 136),
         body: SafeArea(
           child: Center(
