@@ -1,3 +1,4 @@
+import 'package:app_monjour/pages/home.dart';
 import 'package:app_monjour/utils/personalize_data.dart';
 import 'package:app_monjour/widget/goal_container.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,18 @@ class _UserWorkoutState extends State<UserWorkoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+         leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).popAndPushNamed('/home_page');
+              /* Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HomePage())); */ 
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+          ), 
+          backgroundColor:Colors.white,
+      ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(24.0),

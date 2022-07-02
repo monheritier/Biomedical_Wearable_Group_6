@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 //Page made up for food suggestions pages. Here we have reported all the details for every object that is contained into the list
 //that we have created
 class DetailsPage extends StatefulWidget {
+  static const route = '/';
+  static const routename = '/details_page';
   final heroTag;
   final foodName;
   final foodPrice;
@@ -19,20 +21,20 @@ class _DetailsPageState extends State<DetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
+           leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              Navigator.of(context).popAndPushNamed('/pizza_page');
             },
             icon: Icon(Icons.arrow_back_ios),
-            color: Colors.white,
-          ),
+            color: Colors.black,
+          ), 
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           title: Text('Details',
               style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 18.0,
-                  color: Colors.white)),
+                  color: Colors.black)),
           centerTitle: true,
           actions: <Widget>[
             IconButton(
@@ -154,7 +156,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         children: <Widget>[
                           _buildInfoCard('WEIGHT', '300', 'G'),
                           SizedBox(width: 10.0),
-                            _buildInfoCard('CALORIES', '267', 'CAL'),
+                            _buildInfoCard('CALORIES', '267', 'KCAL'),
                             SizedBox(width: 10.0),
                             _buildInfoCard('VITAMINS', 'A, B6', 'VIT'),
                             SizedBox(width: 10.0),
@@ -173,7 +175,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           height: 50.0,
                           child: Center(
                             child: Text(
-                              'Yummy! Eat healthy!',
+                              'Yummy, eat healthy!',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'Montserrat'

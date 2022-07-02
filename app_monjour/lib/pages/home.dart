@@ -1,3 +1,4 @@
+import 'package:app_monjour/pages/auth_page.dart';
 import 'package:app_monjour/pages/calendar_page.dart';
 import 'package:app_monjour/pages/heart_page.dart';
 import 'package:app_monjour/pages/today_target_detail_page.dart';
@@ -7,11 +8,12 @@ import 'package:flutter/gestures.dart';
 import 'package:app_monjour/theme/colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login/flutter_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-  static const route = '/home/';
+  static const route = '/home_page';
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -28,6 +30,15 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).popAndPushNamed('/auth_page');
+              /* Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => AuthPage())); */
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.white,
+          ),
           title: Text('MonJour'),
           centerTitle: true,
           shadowColor: Colors.cyan[100],
@@ -36,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             IconButton(
                 onPressed: () async {
                   _unhautorize();
-                  Navigator.of(context).pushNamed('/login_page');
+                  Navigator.of(context).popAndPushNamed('/login_page');
                 },
                 icon: Icon(Icons.exit_to_app)),
           ]),
@@ -78,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                     child:Icon(Icons.accessibility_rounded),
                   onTap: () {
                     
-                    Navigator.pushNamed(context, '/profile_page');
+                    Navigator.popAndPushNamed(context, '/profile_page');
                     
                   })),
                 )
@@ -161,8 +172,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => HeartPage()));
+                        Navigator.of(context).popAndPushNamed('/HeartPage');
+                        /* Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => HeartPage())); */
                       },
                       child: Container(
                         width: 70,
@@ -215,8 +227,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => CalendarPage()));
+                        Navigator.of(context).popAndPushNamed('/calendar_page');
+                        /* Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => CalendarPage())); */
                       },
                       child: Container(
                         width: 70,
@@ -261,8 +274,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => UserWorkoutPage()));
+                        Navigator.of(context).popAndPushNamed('/today_target_detail');
+                        /* Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => UserWorkoutPage())); */
                       },
                       child: Container(
                         width: 70,

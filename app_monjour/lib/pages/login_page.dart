@@ -41,25 +41,46 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      logo: AssetImage('assets/images/Logo_animato.gif'),
-      onLogin: _authUser,
-      onSignup: _signupUser,
-      onSubmitAnimationCompleted: () {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => AuthPage(),
+        logo: AssetImage('assets/images/Logo_animato.gif'),
+        onLogin: _authUser,
+        onSignup: _signupUser,
+        onSubmitAnimationCompleted: () {
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => AuthPage(),
+          ));
+        },
+        onRecoverPassword: _recoverPassword,
+        theme: LoginTheme(
+          primaryColor: Color.fromARGB(248, 0, 150, 136),
+          accentColor: Colors.yellow,
+          errorColor: Colors.deepOrange,
+          titleStyle: TextStyle(
+            color: Colors.greenAccent,
+            fontFamily: 'Poppins',
+            letterSpacing: 4,
+          ),
         ));
-      },
-      onRecoverPassword: _recoverPassword,
-      theme: LoginTheme(
-        primaryColor: Color.fromARGB(248, 0, 150, 136),
-        accentColor: Colors.yellow,
-        errorColor: Colors.deepOrange,
-        titleStyle: TextStyle(
-          color: Colors.greenAccent,
-          fontFamily: 'Poppins',
-          letterSpacing: 4,
-        ),
-      )
-    );
   }
+}
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    floatingActionButtonLocation:FloatingActionButtonLocation.startDocked,
+    floatingActionButton: FloatingActionButton(
+      
+      backgroundColor: Colors.white,
+      onPressed: () {
+        Navigator.of(context).popAndPushNamed('/welcome_page');
+        /* Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => WelcomePage())); */
+      },
+      elevation: 2.0,
+      shape: CircleBorder(),
+      child: Icon(
+        Icons.arrow_back_ios_sharp,
+        color: Color.fromARGB(249, 0, 150, 136),
+      ),
+    ),
+  );
 }

@@ -1,4 +1,5 @@
 import 'package:app_monjour/models/heartview.dart';
+import 'package:app_monjour/pages/home.dart';
 import 'package:app_monjour/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -56,8 +57,21 @@ class HeartPage extends StatelessWidget {
       final reportHeart = _insertheart(view.datavalue, view.heartrate);
       return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).popAndPushNamed('/home_page');
+              
+              /* Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HomePage()));  */
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+          ),
           title: const Text('Heart Rate Monitoring'),
+           titleTextStyle:
+        TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
           backgroundColor: Colors.redAccent,
+          centerTitle: true,
         ),
         body: Center(
             child: Container(

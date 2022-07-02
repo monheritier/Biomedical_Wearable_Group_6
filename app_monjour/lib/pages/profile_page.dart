@@ -7,10 +7,23 @@ class ProfilePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).popAndPushNamed('/home_page');
+              
+              /* Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HomePage())); */ 
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+          ),
           backgroundColor: Colors.transparent,
+          titleTextStyle:
+        TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
           title: Text(
             "Your Profile Page",
             style: TextStyle(fontSize: 18.0),
+              
           ),
         ),
         backgroundColor: Color.fromARGB(249, 0, 150, 136),

@@ -37,8 +37,9 @@ class IntroductionScreen extends StatelessWidget {
             
             backgroundColor: Colors.white,
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => WelcomePage()));
+                    Navigator.of(context).popAndPushNamed('/welcome_page');
+                    /* Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => WelcomePage())); */
                   },
                   elevation: 2.0,
                   child: Icon(

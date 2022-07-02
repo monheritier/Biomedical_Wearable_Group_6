@@ -1,3 +1,4 @@
+import 'package:app_monjour/pages/Introductionscreen.dart';
 import 'package:app_monjour/pages/activity_page.dart';
 import 'package:app_monjour/pages/auth_page.dart';
 import 'package:app_monjour/pages/calendar_page.dart';
@@ -9,6 +10,7 @@ import 'package:app_monjour/pages/profile_page.dart';
 
 import 'package:app_monjour/pages/today_target_detail_page.dart';
 import 'package:app_monjour/pages/welcomepage.dart';
+import 'package:app_monjour/utils/detailsPage.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> generateRoute(RouteSettings setting) {
@@ -34,7 +36,11 @@ Route<dynamic> generateRoute(RouteSettings setting) {
     case '/today_target_detail':
       return MaterialPageRoute(builder: ((context) => UserWorkoutPage()));
     case '/pizza_page':
-      return MaterialPageRoute(builder: ((context) => PizzaPage()));
+      return MaterialPageRoute(builder: ((context) => MyPizzaPage()));
+      case '/details_page':
+      return MaterialPageRoute(builder: ((context) => DetailsPage()));
+      case '/intro_screen':
+      return MaterialPageRoute(builder: ((context) => IntroductionScreen()));
     default:
       return MaterialPageRoute(
           builder: ((context) => Scaffold(

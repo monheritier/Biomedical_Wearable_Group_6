@@ -3,16 +3,18 @@ import 'package:app_monjour/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:app_monjour/utils/detailsPage.dart';
 
+
 //Page for food suggestions after your daily activity task
-class PizzaPage extends StatelessWidget {
+/* class PizzaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyPizzaPage(),
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: router.generateRoute,
     );
   }
-}
+}  */
 
 class MyPizzaPage extends StatefulWidget {
   @override
@@ -24,18 +26,32 @@ class _MyPizzaPageState extends State<MyPizzaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Food Suggestions'),
+        leading: IconButton(
+            onPressed: () {
+                Navigator.of(context).popAndPushNamed('/ActivityPage');  
+               /*  Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ActivityP()));  */
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+          ),
+          title: const Text("Food Suggestions",textAlign: TextAlign.center),
+            titleTextStyle:
+        TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
         backgroundColor:Color.fromARGB(255, 0, 206, 255).withOpacity(0.5),
       actions: [
             IconButton(
+              alignment: Alignment.centerRight,
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
+                   Navigator.of(context).popAndPushNamed('/home_page'); 
+              /*   Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => HomePage()
-            ));
+            )); */ 
               },
-              icon: const Icon(Icons.home),
-            )
-          ]),
+              icon: const Icon(Icons.home,color: Colors.black),
+            ),
+            ]
+          ),
 
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -45,10 +61,10 @@ class _MyPizzaPageState extends State<MyPizzaPage> {
           children: [
             Container(
               
-              child: Text(
-                "Food Suggestions",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
+              // child: Text(
+                
+              //   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              // ),
             ),
             Container(
             height: MediaQuery.of(context).size.height - 185.0,
@@ -138,9 +154,10 @@ class _MyPizzaPageState extends State<MyPizzaPage> {
                 icon: Icon(Icons.add),
                 color: Colors.black,
                 onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
+                     /* Navigator.of(context).pushNamed('/details_page',arguments: DetailsPage(heroTag: imgPath, foodName: foodName, foodPrice: price) );  */
+             /*  Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => DetailsPage(heroTag: imgPath, foodName: foodName, foodPrice: price)
-            ));
+            )); */ 
           },
                 
               )

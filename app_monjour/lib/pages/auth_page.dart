@@ -18,33 +18,40 @@ class AuthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     print('${AuthPage.routename} built');
     return Scaffold(
-      backgroundColor:Color.fromARGB(240, 247, 246, 244) ,
+      backgroundColor: Color.fromARGB(240, 247, 246, 244),
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).popAndPushNamed('/login_page');
+             /* Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => LoginPage())); */ 
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          color: Colors.white,
+        ),
         title: Text(AuthPage.routename),
         backgroundColor: Colors.transparent,
       ),
       body: Center(
-        
-        child: 
-        Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          
           children: [
             ElevatedButton(
-               onPressed: () async {
+              onPressed: () async {
                 // Authorize the app
                 String? userId = await FitbitConnector.authorize(
-                    context: context,
-                    clientID:'238K7K' ,
-                    clientSecret: '03f4d2224ecdbb1ba000ac92355813cf',
-                    redirectUri: 'monjour://fitbit/auth',
-                    callbackUrlScheme: 'monjour',
-                    ); },
-                    child: Text('Please authorize the app to use your data!'),
-                    ),
-          SizedBox(
-                   height:80 ,
-               ),
+                  context: context,
+                  clientID: '238K7K',
+                  clientSecret: '03f4d2224ecdbb1ba000ac92355813cf',
+                  redirectUri: 'monjour://fitbit/auth',
+                  callbackUrlScheme: 'monjour',
+                );
+              },
+              child: Text('Please authorize the app to use your data!'),
+            ),
+            SizedBox(
+              height: 80,
+            ),
             Container(
               width: double.infinity,
               height: 150,
@@ -65,7 +72,7 @@ class AuthPage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, "/home_page");
+                        Navigator.popAndPushNamed(context, "/home_page");
                       },
                       child: Container(
                         width: 70,
@@ -91,16 +98,16 @@ class AuthPage extends StatelessWidget {
       ),
     );
   } //build
-          
-       
-  } //build
-   void _toLoginPage(BuildContext context) async{
 
-    final sp = await SharedPreferences.getInstance();
-    sp.remove('username');
+} //build
 
-    //Pop the drawer first 
-    Navigator.pop(context);
-    //Then pop the HomePage
-    Navigator.of(context).pushReplacementNamed(WelcomePage.route);
-  }//_toLoginPage
+/* void _toLoginPage(BuildContext context) async {
+  final sp = await SharedPreferences.getInstance();
+  sp.remove('username');
+
+  //Pop the drawer first
+  Navigator.pop(context);
+  //Then pop the HomePage
+  Navigator.of(context).pushReplacementNamed(WelcomePage.route);
+} //_toLoginPage
+ */

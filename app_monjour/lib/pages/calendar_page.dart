@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:app_monjour/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:time_planner/time_planner.dart';
 
@@ -54,6 +55,15 @@ class _CalendarPageState extends State<CalendarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).popAndPushNamed('/home_page');
+              /* Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HomePage())); */ 
+            },
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+          ),
         backgroundColor: Color.fromARGB(255, 246, 246, 128),
         title:Text('Your activity planner'),
         titleTextStyle:
