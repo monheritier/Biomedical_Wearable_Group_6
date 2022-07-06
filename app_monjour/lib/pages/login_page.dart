@@ -8,7 +8,7 @@ const users = const {
   'martinasapone@gmail.com': 'Martina99',
   'giacomocappon@gmail.com': 'Giacomo92',
   'martinavettoretti@gmail.com': 'Martina89',
-  'marcorossi@gmail.com': 'Marco',
+  'marcorossi@gmail.com': 'Marco95',
 };
 
 class LoginPage extends StatelessWidget {

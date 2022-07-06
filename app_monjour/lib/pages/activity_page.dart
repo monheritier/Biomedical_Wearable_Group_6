@@ -23,17 +23,17 @@ class ActivityP extends StatelessWidget {
       appBar: AppBar(
           leading: IconButton(
             onPressed: () {
-               Navigator.of(context).popAndPushNamed('/home_page'); 
-              
-               /* Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => HomePage())); */  
+              Navigator.of(context).popAndPushNamed('/home_page');
+
+              /* Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HomePage())); */
             },
             icon: Icon(Icons.arrow_back_ios),
             color: Colors.black,
           ),
           title: const Text('Activity Monitoring'),
-          titleTextStyle:
-        TextStyle(color: Colors.black, fontSize: 18, fontWeight:FontWeight.bold),
+          titleTextStyle: TextStyle(
+              color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
           backgroundColor: secondary.withAlpha(185),
           centerTitle: true,
           actions: [
@@ -66,7 +66,10 @@ class ActivityP extends StatelessWidget {
                       .insertActivity(Activity(distanza, date));
                 }
               },
-              icon: const Icon(Icons.run_circle_sharp, color: Colors.black,),
+              icon: const Icon(
+                Icons.run_circle_sharp,
+                color: Colors.black,
+              ),
             )
           ]),
       body: Center(
@@ -87,7 +90,8 @@ class ActivityP extends StatelessWidget {
                           return Card(
                             elevation: 5,
                             child: Dismissible(
-                              movementDuration:const Duration(milliseconds: 100),
+                                movementDuration:
+                                    const Duration(milliseconds: 100),
                                 key: UniqueKey(),
                                 background: Container(
                                   color: Colors.red,
@@ -122,12 +126,13 @@ class ActivityP extends StatelessWidget {
                                     builder: (BuildContext context) =>
                                         AlertDialog(
                                       //Evaluation of single daily activity
-                                      title: const Text('No way',
+                                      title: const Text(
+                                          'Discover what you deserve',
                                           textAlign: TextAlign.center),
                                       content: Text((() {
                                         if (datadistanza[activityIndex]
                                                 .distance >
-                                            10000) {
+                                            7000) {
                                           return "Good job for this day!";
                                         }
                                         return "Sorry, not enough for this day!";
@@ -141,8 +146,7 @@ class ActivityP extends StatelessWidget {
                                         TextButton(
                                           onPressed: () => Navigator.of(context)
                                               .popAndPushNamed('/pizza_page'),
-                                          child:
-                                              const Text('Discover yor win!'),
+                                          child: const Text('More Details'),
                                         ),
                                       ],
                                     ),
